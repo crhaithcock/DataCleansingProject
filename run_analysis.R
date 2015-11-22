@@ -41,6 +41,6 @@ all_x_all_data <- cbind(all_x_std_mean_activity_desc,all_subject)
 grouped <- group_by(all_x_all_data,activity_name,subject) %>%
             summarise_each(funs(mean))
 
-# TODO: rename columns for grouped
-#       drop activity_id column
+write.table(grouped, file = "./tidy_data.txt", sep = " ",row.names = F)
+
 
